@@ -7,4 +7,5 @@ silver_df = (
    .dropDuplicates(["customer_id"])
    .dropna(subset=["customer_id"])
 )
+print("this is silver dataframe")
 display(silver_df)

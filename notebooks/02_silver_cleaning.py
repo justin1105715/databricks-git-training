@@ -2,10 +2,12 @@
 bronze_df = spark.table(
    "data_engineering.bronze.customers"
 )
+
 silver_df = (
    bronze_df
    .dropDuplicates(["customer_id"])
-   .dropna(subset=["customer_id", "phone"])
+   .dropna(subset=["customer_id", "email", "phone"])
 )
+
 print("this is silver dataframe")
 display(silver_df)

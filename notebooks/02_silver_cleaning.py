@@ -5,7 +5,7 @@ bronze_df = spark.table(
 silver_df = (
    bronze_df
    .dropDuplicates(["customer_id"])
-   .dropna(subset=["customer_id"])
+   .dropna(subset=["customer_id", "phone"])
 )
 print("this is silver dataframe")
 display(silver_df)
